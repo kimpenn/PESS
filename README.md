@@ -9,7 +9,7 @@ External requirements:
 - [Python](http://www.python.org/download) (2 or 3)
     - [NumPy](http://www.numpy.org)
     - [scikit-learn](http://scikit-learn.org/stable/)
-- [CNFalign_lite](http://raptorx.uchicago.edu/download/) (part of the RaptorX threading package)
+- [CNFsearch](http://raptorx.uchicago.edu/download/) - part of the RaptorX threading package. Only version 1.66 has been tested.
 
 Installation:
 
@@ -24,14 +24,15 @@ Using `demo.fa` (included with PESS download):
 
 *Note: in the following, replace `<PATH_TO_PESS>` with the relative or absolute path to where you unzipped the PESS code, and replace `<NUM_CPU>` with the number of CPUs you want to utilize.*
 
-- Navigate to the directory where your RaptorX executables are stored. (You must run the PESS code from within this directory or RaptorX will not work properly.)
-- Run the threading script using the following command:<br />
+1. Navigate to the directory where your RaptorX executables are stored. (You must run the PESS code from within this directory or RaptorX will not work properly.)
+
+1. Run the threading script using the following command:<br />
     `python <PATH_TO_PESS>/pess_1.0.0/step1_threading.py <PATH_TO_PESS>/pess_1.0.0/demo/demo.fa --cpu=<NUM_CPU> --out="<PATH_TO_PESS>/pess_1.0.0/demo/demo_results"`<br />
-Note that this step will take several minutes per sequence, so we recommend using multiple CPU.
-	
-- Run the classification script using the following command:<br />
+*Note that this step will take several minutes per sequence, so we recommend using multiple CPU.*
+
+1. Run the classification script using the following command:<br />
     `python <PATH_TO_PESS>/pess_1.0.0/step2_classification.py <PATH_TO_PESS>/pess_1.0.0/demo/demo_results/demo.scoremat --cpu=<NUM_CPU>`<br />
-This step is faster, but can still benefit from multiple CPUs.
+*This step is faster, but can still benefit from multiple CPUs.*
 
 The output will be a file (`<PATH_TO_PESS>/pess_1.0.0/demo/demo_results/demo.scoremat.fold_preds.txt`) containing the predicted fold for each sequence, its distance to the nearest training neighbor (which can give some idea of confidence), and whether the prediction is considered high confidence or not (based on having a nearest neighbor distance of <= 17.5).
 

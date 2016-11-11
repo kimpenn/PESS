@@ -11,12 +11,13 @@
 # 
 # Notes:
 # - Requires Numpy and scikit-learn
+# - Output file is <SCOREMAT>.fold_preds.txt
 #
 # Usage:
-#    python step2_classification.py SCOREMAT
+#    python step2_classification.py SCOREMAT [options]
 #  
 # Usage examples: 
-#    python ~/src/step2_classification.py ~/demo/demo.scoremat
+#    python ~/pess/step2_classification.py ~/pess/demo/demo.scoremat --cpu=4
 #==================================================================================================
 import sys, os
 import numpy as np

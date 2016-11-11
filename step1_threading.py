@@ -22,8 +22,8 @@
 #    python step1_threading.py FASTA [options]
 #
 # Examples:
-#    python ~/src/step1_threading.py ~/demo/demo.fa
-#    python ~/src/step1_threading.py ~/demo/demo.fa --cpu=32 --out="demo_results"
+#    python ~/pess/step1_threading.py ~/pess/demo/demo.fa
+#    python ~/pess/step1_threading.py ~/pess/demo/demo.fa --cpu=32 --out="~/pess/demo/demo_results"
 #==================================================================================================
 import subprocess, sys, os, time
 from multiprocessing import Pool, cpu_count
